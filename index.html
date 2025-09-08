@@ -24,7 +24,7 @@
     }
     header{
       position:sticky;top:0;z-index:10;
-      background:#1f6feb;color:#fff;padding:22px 16px 18px;border-bottom:1px solid rgba(255,255,255,.15)
+      background:#1f6feb;color:#fff;padding:20px 16px 18px;border-bottom:1px solid rgba(255,255,255,.15)
     }
     header h1{margin:0 0 8px}
     header nav{display:flex;flex-wrap:wrap;gap:12px 14px;margin:6px 0 2px}
@@ -37,12 +37,22 @@
     ul{margin:.4em 0 .8em .8em}
     footer{color:#666;text-align:center;padding:28px 16px}
     .muted{color:#666}
+    header .muted {
+     color: #f0f0f0;               /* 更亮的灰白色 */
+     font-size: 0.95em;
+     text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* 增加对比度 */
+    }
+
     /* 回到顶部按钮 */
     #toTop{
       position:fixed;right:18px;bottom:22px;display:none;
       border:1px solid #d0d7de;border-radius:8px;background:#fff;padding:8px 10px;cursor:pointer
     }
     #toTop:hover{background:#f6f8fa}
+    section {
+      scroll-margin-top: 90px;  /* 根据 header 高度设置，推荐 80~90px */
+    }
+
   </style>
 </head>
 <body>
