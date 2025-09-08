@@ -4,14 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>数据结构可视化 - 帮助中心</title>
-  <meta name="description" content="数据结构可视化演示工具：栈/队列/链表/二叉树基础、使用手册、FAQ、留言区" />
+
+  <!-- 图标与分享卡片 -->
+  <link rel="icon" href="images/favicon.png">
+  <meta name="description" content="数据结构可视化：栈/队列/链表/二叉树基础、使用手册、FAQ、留言区。">
+  <meta property="og:title" content="数据结构可视化 · 帮助中心">
+  <meta property="og:description" content="操作手册、常见问题、留言反馈（历史永久保存）。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <style>
     :root{--max:980px}
     *{box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Microsoft YaHei UI",sans-serif;margin:0;background:#fafafa;color:#222;line-height:1.6}
-    header{background:#1f6feb;color:#fff;padding:28px 16px}
+    html{scroll-behavior:smooth;} /* 锚点平滑滚动 */
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Microsoft YaHei UI",sans-serif;
+      margin:0;background:#fafafa;color:#222;line-height:1.6
+    }
+    header{
+      position:sticky;top:0;z-index:10;
+      background:#1f6feb;color:#fff;padding:22px 16px 18px;border-bottom:1px solid rgba(255,255,255,.15)
+    }
     header h1{margin:0 0 8px}
-    header nav a{color:#fff;text-decoration:none;margin-right:14px}
+    header nav{display:flex;flex-wrap:wrap;gap:12px 14px;margin:6px 0 2px}
+    header nav a{color:#fff;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+    header nav a:hover{border-bottom-color:#fff}
     main{max-width:var(--max);margin:0 auto;padding:22px 16px}
     .card{background:#fff;border:1px solid #e1e4e8;border-radius:10px;padding:18px;margin:16px 0}
     h2{margin:.4em 0 .6em}
@@ -19,6 +37,12 @@
     ul{margin:.4em 0 .8em .8em}
     footer{color:#666;text-align:center;padding:28px 16px}
     .muted{color:#666}
+    /* 回到顶部按钮 */
+    #toTop{
+      position:fixed;right:18px;bottom:22px;display:none;
+      border:1px solid #d0d7de;border-radius:8px;background:#fff;padding:8px 10px;cursor:pointer
+    }
+    #toTop:hover{background:#f6f8fa}
   </style>
 </head>
 <body>
@@ -30,6 +54,7 @@
       <a href="#faq">常见问题</a>
       <a href="#feedback">留言区</a>
       <a href="#changelog">更新日志</a>
+      <a href="https://github.com/xiuxix666/dsviz_help/issues/new?title=%5Bbug%5D+描述问题&labels=bug&body=步骤%3A%0A1.+...%0A预期%3A%0A实际%3A%0A截图%3A" target="_blank" rel="noopener">问题反馈（Issues）</a>
     </nav>
     <div class="muted">本页用于解答使用本软件时的常见问题，并提供留言反馈入口。</div>
   </header>
@@ -94,38 +119,9 @@
 
     <section id="feedback" class="card">
       <h2>留言区（会保存历史）</h2>
-      <p class="muted">需要登录 GitHub 后留言。留言将永久保存在仓库 Discussions 中。</p>
+      <p class="muted">需要登录 GitHub 后留言。留言将永久保存在仓库 Discussions 中。首次打开若未显示，请刷新页面。</p>
+      <div style="padding:6px 0;color:#999">留言组件加载中…</div>
 
-      <!-- 第 3 步：到 giscus.app 生成脚本，粘贴到这里。 -->
-      <script src="https://giscus.app/client.js"
-        data-repo="xiuxixi666/dsviz_help"
-        data-repo-id="R_kgDOPrylYQ"
-        data-category="Feedback"
-        data-category-id="DIC_kwDOPrylYc4CvI6U"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-      <noscript>请启用 JavaScript 以加载留言区。</noscript>
-    </section>
-
-    <section id="changelog" class="card">
-      <h2>更新日志</h2>
-      <ul>
-        <li><b>v1.0</b> 启动：四类数据结构、操作手册、FAQ、留言区。</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 数据结构可视化 · 欢迎在留言区反馈问题与建议。
-  </footer>
-</body>
-</html>
+      <!-- giscus：你的配置（保持 light 主题） -->
+      <script s
 
