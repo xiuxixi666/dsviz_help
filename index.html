@@ -125,5 +125,118 @@
         <li><b>定义：</b>一种层次结构，每个节点最多有两个子节点（左子树和右子树）。</li>
         <li><b>遍历方式：</b>
           <ul>
+            <li>前序遍历：根 → 左 → 右。</li>
+            <li>中序遍历：左 → 根 → 右。</li>
+            <li>后序遍历：左 → 右 → 根。</li>
+            <li>层序遍历：按层逐层访问。</li>
+          </ul>
+        </li>
+        <li><b>二叉搜索树（BST）：</b>中序遍历结果有序；查找、插入、删除平均时间复杂度 O(log n)。</li>
+        <li><b>常见变体：</b>
+          <ul>
+            <li>平衡二叉树（AVL、红黑树）：保持树高度平衡，保证 O(log n) 操作。</li>
+            <li>堆（Heap）：完全二叉树，常用于优先队列。</li>
+            <li>字典树（Trie）：用于字符串快速检索。</li>
+          </ul>
+        </li>
+        <li><b>典型应用：</b>快速查找与排序、表达式解析、索引构建、路径搜索。</li>
+      </ul>
+    </section>
+
+    <section id="manual" class="card">
+      <h2>使用手册</h2>
+
+      <p>本工具主要用于 <b>栈、队列、链表、二叉树</b> 的可视化学习与演示。典型的操作流程如下：</p>
+      <ol>
+        <li><b>新建页面：</b>通过左侧按钮或标签页右键菜单，新建一种数据结构的演示页面。</li>
+        <li><b>执行操作：</b>在工具栏或菜单中选择相应操作（如链表插入、栈入栈、队列入队、树插入节点）。操作结果会在中间画布动态展示。</li>
+        <li><b>观察信息：</b>右下角的 <b>DS Info</b> 会显示元素数量等统计信息。刚进入页面时显示「——」，执行操作后显示实际计数。</li>
+        <li><b>保存与加载：</b>通过 File → Save/Load 保存当前数据结构为 <code>.dsf</code> 文件，或从文件中加载之前的状态。</li>
+        <li><b>清空与重置：</b>Operate → Clear 可以清空当前结构；Reset 可以恢复默认视图。</li>
+        <li><b>动画速度：</b>通过 Operate → Speed 菜单选择演示速度（慢 / 中 / 快）。</li>
+        <li><b>帮助与反馈：</b>菜单 Help → About 可查看本页面链接；如有问题可在留言区或问题反馈入口提出。</li>
+      </ol>
+
+      <p class="muted" style="margin-top:1em">
+        更加详细的操作说明（带截图和完整步骤）将在 Word 文档中提供。  
+        👉 <a href="#" target="_blank">点击这里下载详细操作手册（即将上线）</a>
+      </p>
+    </section>
+
+    <!-- 新增：快捷键 -->
+    <section id="shortcuts" class="card">
+      <h2>快捷键</h2>
+      <table class="kbd">
+        <thead>
+          <tr><th style="width:28%">按键</th><th>功能</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>保存当前数据结构到 <code>.dsf</code> 文件</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>O</kbd></td><td>从 <code>.dsf</code> 文件加载数据结构</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>L</kbd></td><td>清空当前结构（Operate → Clear）</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>R</kbd></td><td>重置演示视图（Operate → Reset）</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>1</kbd></td><td>动画速度：慢</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>2</kbd></td><td>动画速度：中</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>3</kbd></td><td>动画速度：快</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>关闭当前标签页（含未保存确认）</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top:8px">提示：具体可操作项以页面的实际工具栏/菜单显示为准。</p>
+    </section>
+
+    <section id="faq" class="card">
+      <h2>常见问题（FAQ）</h2>
+      <p><b>保存/加载失败？</b>确认扩展名为 <code>.dsf</code> 且有权限；文件内容需符合格式。</p>
+      <p><b>动画太快/太慢？</b>通过菜单或快捷键 <b>Alt+1/2/3</b> 调整。</p>
+      <p><b>右下角显示 0/100？</b>切换页刚进入会显示「——」，有操作后才显示实际计数。</p>
+    </section>
+
+    <section id="feedback" class="card">
+      <h2>留言区（会保存历史）</h2>
+      <p class="muted">
+        如果在使用过程中遇到问题，或想与我们交流学习心得、分享新的想法和创意，  
+        欢迎在下方留言。留言需要使用 GitHub 账号登录，内容会永久保存到仓库 Discussions。
+      </p>
+
+      <!-- giscus 配置 -->
+      <script src="https://giscus.app/client.js"
+              data-repo="xiuxixi666/dsviz_help"
+              data-repo-id="R_kgDOPrylYQ"
+              data-category="Feedback"
+              data-category-id="DIC_kwDOPrylYc4CvI6U"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="zh-CN"
+              crossorigin="anonymous"
+              async>
+      </script>
+      <noscript>请启用 JavaScript 以加载留言区。</noscript>
+    </section>
+
+    <section id="changelog" class="card">
+      <h2>更新日志</h2>
+      <ul>
+        <li><b>v1.0</b> 启动：四类数据结构、操作手册、FAQ、留言区。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 数据结构可视化 · 欢迎在留言区反馈问题与建议。
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button id="toTop" aria-label="回到顶部">↑ Top</button>
+  <script>
+    const b=document.getElementById('toTop');
+    window.addEventListener('scroll',()=>{b.style.display=window.scrollY>400?'block':'none';});
+    b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+  </script>
+</body>
+</html>
 
 
