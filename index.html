@@ -159,7 +159,7 @@
 
       <p class="muted" style="margin-top:1em">
         更加详细的操作说明（带截图和完整步骤）将在 Word 文档中提供。  
-        👉 <a href="#" target="_blank">点击这里下载详细操作手册（即将上线）</a>
+        👉 <a id="open-manual" href="#" role="button" tabindex="0" target="_blank" rel="noopener">点击这里查看详细操作手册</a>
       </p>
     </section>
 
@@ -231,10 +231,52 @@
 
   <!-- 回到顶部 -->
   <button id="toTop" aria-label="回到顶部">↑ Top</button>
+
   <script>
+    // 回到顶部
     const b=document.getElementById('toTop');
     window.addEventListener('scroll',()=>{b.style.display=window.scrollY>400?'block':'none';});
     b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+    // ===== PDF 预览器跳转（关键逻辑）=====
+    (function () {
+      // 你的 PDF 文件相对路径（放置方法见下文）
+      const pdfUrl = '/assets/help-manual.pdf';   // ← 根据你的部署需要可改
+      // PDF.js 预览器页面（克隆/复制 pdfjs-dist 的 web/viewer.html）
+      const viewerUrl = '/pdfjs/web/viewer.html';
+
+      const a = document.getElementById('open-manual');
+      if (!a) return;
+
+      // 为了更健壮：若站点没有部署 PDF.js，直接回退到浏览器原生预览
+      function setHref(toViewer) {
+        if (toViewer) {
+          a.href = viewerUrl + '?file=' + encodeURIComponent(pdfUrl);
+        } else {
+          a.href = pdfUrl;
+        }
+      }
+
+      // 预设使用 PDF.js
+      setHref(false);
+
+      // 简单探测 viewer 是否可达；失败则回退到直接打开 PDF
+      try {
+        fetch(viewerUrl, { method: 'HEAD' })
+          .then(r => setHref(r.ok))
+          .catch(() => setHref(false));
+      } catch (_) {
+        setHref(false);
+      }
+
+      // 可访问性：键盘 Enter/Space 触发
+      a.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          a.click();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
